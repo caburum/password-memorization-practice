@@ -1,30 +1,23 @@
 <script>
-	export let name;
+	import {tick} from 'svelte';
+	import {saveSelection, restoreSelection} from './selection.js'
+
+	let inputbox, html = '', password;
+
+	function clearInput(e) {
+		inputbox.innerHTML = '';
+	}
+
+	function handleInput(e) {
+		const savedSelection = saveSelection(inputbox);
+		html = Array.from(e.target.textContent)
+			.map((char, i) => ('<span class="' + (password[i] === char ? 'correct' : 'incorrect') + '">' + char + '</span>'))
+			.join('');
+		tick().then(() => { 
+			restoreSelection(inputbox, savedSelection);
+		})
+	}
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+<input id="passwordbox" type="text" bind:value={password} on:input={clearInput} />
+<div contenteditable="true" id="inputbox" bind:this={inputbox} on:input={handleInput}>{@html html}</div>

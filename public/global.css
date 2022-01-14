@@ -1,63 +1,49 @@
 html, body {
-	position: relative;
 	width: 100%;
 	height: 100%;
+	margin: 0 auto;
 }
 
 body {
-	color: #333;
-	margin: 0;
-	padding: 8px;
+	background-color: #111;
+	color: #DDD;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+	padding: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	max-width: 600px;
 }
 
-a {
-	color: rgb(0,100,200);
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-a:visited {
-	color: rgb(0,80,160);
-}
-
-label {
-	display: block;
-}
-
-input, button, select, textarea {
+input, #inputbox {
+	width: 100%;
 	font-family: inherit;
 	font-size: inherit;
-	-webkit-padding: 0.4em 0;
+	outline: none;
 	padding: 0.4em;
 	margin: 0 0 0.5em 0;
 	box-sizing: border-box;
-	border: 1px solid #ccc;
+	background-color: #222;
 	border-radius: 2px;
+	border: 1px solid #252525;
+	color: #DDD;
 }
 
-input:disabled {
-	color: #ccc;
+#passwordbox:not(:focus) {
+	color: transparent;
+	text-shadow: 0 0 5px rgba(221, 221, 221, 0.75);
 }
 
-button {
-	color: #333;
-	background-color: #f4f4f4;
-	outline: none;
+#inputbox * {
+	caret-color: #DDD;
 }
 
-button:disabled {
-	color: #999;
+.correct {
+	color: #2E7D32;
 }
 
-button:not(:disabled):active {
-	background-color: #ddd;
-}
-
-button:focus {
-	border-color: #666;
+.incorrect {
+	color: #C62828;
 }
