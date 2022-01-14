@@ -1,6 +1,16 @@
 {
 	"name": "password-memorization-practice",
 	"version": "1.0.0",
+	"license": "MIT",
+	"author": "Calum Dingwall (https://github.com/caburum)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/caburum/password-memorization-practice.git"
+	},
+	"homepage": "https://github.com/caburum/password-memorization-practice#readme",
+	"bugs": {
+		"url": "https://github.com/caburum/password-memorization-practice/issues"
+	},
 	"scripts": {
 		"build": "rollup -c",
 		"dev": "rollup -c -w",
