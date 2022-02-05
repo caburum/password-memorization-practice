@@ -19,5 +19,5 @@
 	}
 </script>
 
-<input id="passwordbox" type="text" bind:value={password} on:input={clearInput} />
-<div contenteditable="true" id="inputbox" bind:this={inputbox} on:input={handleInput}>{@html html}</div>
+<input id="passwordbox" type="text" spellcheck="false" bind:value={password} on:input={clearInput} />
+<div contenteditable="true" id="inputbox" spellcheck="false" bind:this={inputbox} on:input={handleInput}>{@html html}</div>
